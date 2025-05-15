@@ -7,11 +7,11 @@ export const currentTodoSlice = createSlice({
   name: 'currentTodo',
   initialState,
   reducers: {
-    setCurrentTodo: (_state, action: PayloadAction<Todo>) => action.payload,
-    clearCurrentTodo: () => null,
+    setCurrentTodo: (_state, action: PayloadAction<Todo | null>) =>
+      action.payload,
   },
 });
 
-export const { setCurrentTodo, clearCurrentTodo } = currentTodoSlice.actions;
+export const { setCurrentTodo } = currentTodoSlice.actions;
 
 export default currentTodoSlice.reducer;

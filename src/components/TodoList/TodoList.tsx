@@ -14,7 +14,7 @@ export const TodoList: React.FC = () => {
 
   const filteredTodos = todos.filter(todo => {
     if (filter.status === 'active' && todo.completed) {
-      return false
+      return false;
     };
 
     if (filter.status === 'completed' && !todo.completed) {

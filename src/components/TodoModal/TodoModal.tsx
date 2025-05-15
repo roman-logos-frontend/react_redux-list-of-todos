@@ -4,7 +4,7 @@ import { Loader } from '../Loader';
 import { RootState } from '../../app/store';
 import { User } from '../../types/User';
 import { getUser } from '../../api';
-import { clearCurrentTodo } from '../../features/currentTodo';
+import { setCurrentTodo } from '../../features/currentTodo';
 
 export const TodoModal: React.FC = () => {
   const todo = useSelector((state: RootState) => state.currentTodo);
@@ -32,7 +32,7 @@ export const TodoModal: React.FC = () => {
       <div className="modal is-active" data-cy="modal">
         <div
           className="modal-background"
-          onClick={() => dispatch(clearCurrentTodo())}
+          onClick={() => dispatch(setCurrentTodo(null))}
         />
         <Loader />
       </div>
@@ -43,7 +43,7 @@ export const TodoModal: React.FC = () => {
     <div className="modal is-active" data-cy="modal">
       <div
         className="modal-background"
-        onClick={() => dispatch(clearCurrentTodo())}
+        onClick={() => dispatch(setCurrentTodo(null))}
       />
 
       <div className="modal-card">
@@ -59,7 +59,7 @@ export const TodoModal: React.FC = () => {
             type="button"
             className="delete"
             data-cy="modal-close"
-            onClick={() => dispatch(clearCurrentTodo())}
+            onClick={() => dispatch(setCurrentTodo(null))}
           />
         </header>
 
